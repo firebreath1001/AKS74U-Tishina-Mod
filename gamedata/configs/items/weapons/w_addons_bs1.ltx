@@ -1,0 +1,158 @@
+;-------------------------------------------------------------------------------
+;-- Grenade Launcher BS-1 "Tishina"
+;-------------------------------------------------------------------------------
+[wpn_addon_grenade_launcher_bs1]:identity_immunities
+GroupControlSection	                                = spawn_group
+discovery_dependency                                =
+$spawn			                                    = "weapons\addons\grenade_launcher_bs1" ; option for Level Editor
+class			                                    = WP_GLAUN
+cform                                               = skeleton
+visual                                              = dynamics\weapons\wpn_upgrade\wpn_grenade_launcher_bs1.ogf
+description		                                    = st_grenade_launcher_bs1_descr
+$prefetch 		                                    = 32
+
+cost			                                    = 10450
+inv_name		                                    = st_grenade_launcher_bs1
+inv_name_short	                                    = st_grenade_launcher_bs1_s
+inv_weight		                                    = 2.0
+kind			                                    = w_misc
+
+icons_texture										= ui\ui_icons_bs1
+inv_grid_width		                                = 3
+inv_grid_height		                                = 1
+inv_grid_x			                                = 0
+inv_grid_y			                                = 0
+grenade_vel 		                                = 105
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;-- Grenade for BS-1 "Tishina"
+;-------------------------------------------------------------------------------
+
+[ammo_vog-t]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_vog-t" ; option for Level Editor
+class			= S_VOG25
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_vog_t.ogf
+description		= ammo-vog-t_descr
+
+$prefetch 		= 64
+
+cost			= 1560
+
+box_size		= 1
+
+inv_name		= ammo-vog-t
+inv_name_short	= ammo-vog-t_s
+inv_weight		= 0.17
+
+icons_texture		= ui\ui_icons_bs1
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 3
+inv_grid_y			= 0
+
+kill_msg_x			= 38
+kill_msg_y			= 233
+kill_msg_width		= 21
+kill_msg_height		= 22
+
+k_disp			= 0.55
+k_hit			= 0.9 ;  2
+k_impulse		= 1.1
+k_ap			= 0.4
+buck_shot		= 0
+tracer			= off
+wm_size         = 0.03
+
+fake_grenade_name = wpn_fake_missile_vogt
+
+tier                                     = 5
+snd_on_take								 = other
+grenade_ammo							 = true
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;-- Fake Missile for BS-1 "Tishina"
+;-------------------------------------------------------------------------------
+[wpn_fake_missile_vogt]:identity_immunities,default_weapon_params
+visual              = dynamics\weapons\wpn_ammo\ammo_vog_t.ogf
+cform               = skeleton
+class               = G_FAKE
+$prefetch 			= 32
+
+inv_weight			= 0.2
+
+cost				= 150
+
+blast				= 3.6
+blast_r				= 3.0
+blast_impulse		= 100
+blast_impulse_factor = 1
+
+frags				= 50
+frags_r				= 10
+frag_hit			= 0.03
+frag_hit_impulse	=  13
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.4
+
+;trail				= weapons\rpg_trail_01, weapons\rpg_trail_02
+
+explode_particles	= explosions\explosion_01
+
+light_color		         = 1.6,1.1,0.5
+light_range		         = 15.0
+light_time 		         = 0.5
+
+ph_mass			 = 3
+;engine_f			= 530
+;engine_u			= 90
+
+jump_height = 0.1 ;0
+
+wm_size         = 0.03
+
+;трассы от осколков
+fragment_speed				= 122
+
+explode_duration		 = 3		;подолжительность взрыва (с)
+
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+;wallmarks
+wallmark_section		= explosion_marks
+
+;свойства которые читаются, но не используются
+inv_name		= ammo-vog-t
+inv_name_short	= ammo-vog-t
+inv_weight		= 0.2
+
+;pointless info?
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 31
+inv_grid_y			= 60
+
+kill_msg_x			= 17
+kill_msg_y			= 232
+kill_msg_width		= 21
+kill_msg_height		= 22
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Свойства CustomRocket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+engine_present		= false		;присутствует ли в ракете двигатель
+lights_enabled		= false		;свет вокруг ракеты, во время полета
+force_explode_time  = 10000
+
+[gl_fake_missile_ammo_vogt]:wpn_fake_missile_vogt,gl_fake_missile
+inv_grid_x = 1
+inv_grid_y = 1
+
+[gl_test_shell_ammo_vog-t]:gl_test_shell
+visual					= grenadier\ammo_vog-t.ogf

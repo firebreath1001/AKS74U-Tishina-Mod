@@ -1,0 +1,389 @@
+;hud_fov 0.6------------------------------------------------------------------------------------------------
+![wpn_ak74u]
+!hud_fov
+!shell_point
+!shell_dir
+!shell_particles
+
+grenade_class                            = ammo_vog-t
+grenade_launcher_name                    = wpn_addon_grenade_launcher_bs1
+grenade_launcher_status                  = 2
+grenade_launcher_x                       = 116
+grenade_launcher_y                       = 20
+launch_speed                             = 0
+
+snd_reload		        = weapons\aks74u\aks74u_reload_fast
+snd_reload_empty	        = weapons\aks74u\aks74u_reload_empty_slow
+
+snd_empty		        = weapons\aks74u\aks74u_empty
+snd_draw        	        = weapons\aks74u\aks74u_draw
+snd_holster        	        = weapons\aks74u\aks74u_holster
+snd_bore		        = $no_sound
+scripted_snd_bore_w_gl      = weapons\aks74u\aks74u_inspect_w_gl
+scripted_snd_bore_w_gl_jammed        = weapons\aks74u\aks74u_inspect_w_gl
+snd_reload_misfire              = weapons\aks74u\aks74u_unjam
+snd_switch_mode				              = weapons\aks74u\aks74u_switch_mode
+
+scripted_snd_ammo_check                 = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_empty           = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_jammed          = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_empty_jammed    = weapons\aks74u\aks74u_magcheck
+
+scripted_snd_ammo_check_w_gl                 = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_empty_w_gl           = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_w_gl_jammed          = weapons\aks74u\aks74u_magcheck
+scripted_snd_ammo_check_empty_w_gl_jammed    = weapons\aks74u\aks74u_magcheck
+
+scripted_snd_ammo_check_no_mag          = $no_sound
+scripted_snd_sprint2walk        	        = weapons\aks74u\aks74u_draw
+
+![wpn_ak74u_hud]
+
+item_visual                 =  anomaly_weapons\wpn_ak74u\wpn_aks74u_gl_hud.ogf
+        item_position                            = 0, 0, 0
+        item_orientation                         = 0, 0, 0
+
+        hands_position                           = -0.001177, 0.001651, 0.041103
+        hands_position_16x9                      = -0.001177, 0.001651, 0.041103
+        hands_orientation                        = -1.275088, 0.00, 0
+        hands_orientation_16x9                   = -1.275088, 0.00, 0
+
+
+        aim_hud_offset_pos                       = -0.05593, 0.013904, -0.046789
+        aim_hud_offset_pos_16x9                  = -0.05593, 0.013904, -0.046789
+        aim_hud_offset_rot                       = 0.028889, 0.010787, 0
+        aim_hud_offset_rot_16x9                  = 0.028889, 0.010787, 0
+
+
+    lowered_hud_offset_pos			= 0.039731, -0.011574, 0.011684
+    lowered_hud_offset_pos_16x9		= 0.039731, -0.011574, 0.011684
+    lowered_hud_offset_rot			= -0.1,-0.6,0.4
+    lowered_hud_offset_rot_16x9		= -0.081037,-0.705504,0.4
+
+    gl_hud_offset_pos                        = -0.122874, 0.040764, -0.025815
+    gl_hud_offset_pos_16x9                   = -0.122874, 0.040764, -0.025815
+    gl_hud_offset_rot                        = 0.131198, 0.053439, 0.346255
+    gl_hud_offset_rot_16x9                   = 0.131198, 0.053439, 0.346255
+
+        lean_hud_offset_pos                      = 0, 0, 0
+        lean_hud_offset_rot                      = 0, 0, 0
+
+;==============SHOOT===================================
+        anm_shots                                = aks74u_mimir_shoot_hand
+        anm_shots_aim                            = aks74u_mimir_shoot_aim_hand
+
+;============RELOADS===================================        
+        anm_reload                               = aks74u_mimir_reload_hand, aks74u_mimir_reload
+        anm_reload_empty                         = aks74u_mimir_reload_empty_slow_hand, aks74u_mimir_reload_empty_slow
+        anm_reload_misfire                       = aks74u_mimir_unjam_hand, aks74u_mimir_unjam
+        anm_reload_misfire_empty                       = aks74u_mimir_unjam_hand, aks74u_mimir_unjam_empty
+
+;=============NORMAL STATE=============================        
+        anm_show                                 = aks74u_mimir_draw_hand, aks74u_mimir_idle 
+        anm_hide                                 = aks74u_mimir_holster_hand, aks74u_mimir_idle
+        anm_bore                                 = aks74u_mimir_inspect_hand, aks74u_mimir_idle
+        anm_idle                                 = aks74u_mimir_idle_hand, aks74u_mimir_idle
+        anm_idle_aim                             = aks74u_mimir_aim_hand, aks74u_mimir_idle
+        anm_idle_aim_moving                      = aks74u_mimir_walk_hand, aks74u_mimir_idle, 0.75
+        anm_idle_aim_moving_crouch               = aks74u_mimir_walk_hand, aks74u_mimir_idle, 0.7
+        anm_idle_moving                          = aks74u_mimir_walk_hand, aks74u_mimir_idle
+        anm_idle_sprint                          = aks74u_mimir_sprint_hand, aks74u_mimir_idle, 1.1 
+        anm_sprint2walk                          = aks74u_mimir_sprint2walk_quick_hand, aks74u_mimir_idle
+        anm_idle_aim_start                       = aks74u_mimir_aim_start_hand, aks74u_mimir_idle
+        anm_idle_aim_end                         = aks74u_mimir_aim_end_hand, aks74u_mimir_idle
+
+        anm_switch_mode                 	 = aks74u_mimir_switch_mode_hand, aks74u_mimir_idle
+
+        anm_bore_empty                                 = aks74u_mimir_inspect_hand, aks74u_mimir_idle_empty
+
+;=============JAMMED STATE=============================
+        anm_show_jammed                          = aks74u_mimir_draw_hand, aks74u_mimir_idle_jammed       
+        anm_hide_jammed                          = aks74u_mimir_holster_hand, aks74u_mimir_idle_jammed
+        anm_bore_jammed                          = aks74u_mimir_inspect_jammed_hand, aks74u_mimir_idle_jammed       
+        anm_idle_jammed                          = aks74u_mimir_idle_hand, aks74u_mimir_idle_jammed
+        anm_idle_aim_jammed                      = aks74u_mimir_aim_hand, aks74u_mimir_idle_jammed
+        anm_idle_aim_moving_jammed               = aks74u_mimir_walk_hand, aks74u_mimir_idle_jammed, 0.75
+        anm_idle_aim_moving_crouch_jammed        = aks74u_mimir_walk_hand, aks74u_mimir_idle_jammed, 0.7
+        anm_idle_moving_jammed                   = aks74u_mimir_walk_hand, aks74u_mimir_idle_jammed
+        anm_idle_sprint_jammed                   = aks74u_mimir_sprint_hand, aks74u_mimir_idle_jammed, 1.1 
+        anm_sprint2walk_jammed                   = aks74u_mimir_sprint2walk_quick_hand, aks74u_mimir_idle_jammed
+        anm_idle_aim_start_jammed                = aks74u_mimir_aim_start_hand, aks74u_mimir_idle_jammed
+        anm_idle_aim_end_jammed                  = aks74u_mimir_aim_end_hand, aks74u_mimir_idle_jammed              
+ 
+        
+        anm_switch_mode_jammed                 	 = aks74u_mimir_switch_mode_hand, aks74u_mimir_idle_jammed
+        
+        anm_bore_empty_jammed                          = aks74u_mimir_inspect_jammed_hand, aks74u_mimir_idle_empty_jammed
+
+;============AMMO CHECKS==============================       
+        anm_ammo_check                           = aks74u_mimir_magcheck_hand, aks74u_mimir_magcheck
+        anm_ammo_check_empty                     = aks74u_mimir_magcheck_hand, aks74u_mimir_magcheck_empty
+        anm_ammo_check_jammed                    = aks74u_mimir_magcheck_hand, aks74u_mimir_magcheck_jammed
+        anm_ammo_check_empty_jammed              = aks74u_mimir_magcheck_hand, aks74u_mimir_magcheck_empty_jammed
+        
+
+;============================================================================================================================================================
+;============WITH GL=========================================================================================================================================
+;============================================================================================================================================================
+
+
+;==============SHOOT===================================
+        anm_shots_w_gl                                = aks74u_mimir_shoot_hand_w_gl
+        anm_shots_w_gl_aim                             = aks74u_mimir_shoot_aim_hand_w_gl
+
+;============RELOADS===================================        
+        anm_reload_w_gl                                = aks74u_mimir_reload_hand_w_gl, aks74u_mimir_reload
+        anm_reload_empty_w_gl                          = aks74u_mimir_reload_empty_slow_hand_w_gl, aks74u_mimir_reload_empty_slow
+        anm_reload_misfire_w_gl                        = aks74u_mimir_unjam_hand_w_gl, aks74u_mimir_unjam
+        anm_reload_misfire_empty_w_gl                        = aks74u_mimir_unjam_hand_w_gl, aks74u_mimir_unjam_empty
+        
+;=============NORMAL STATE=============================        
+        anm_show_w_gl                                  = aks74u_mimir_draw_hand_w_gl, aks74u_mimir_idle 
+        anm_hide_w_gl                                  = aks74u_mimir_holster_hand_w_gl, aks74u_mimir_idle
+        anm_bore_w_gl                                  = aks74u_mimir_inspect_hand_w_gl, aks74u_mimir_idle
+        anm_idle_w_gl                                  = aks74u_mimir_idle_hand_w_gl, aks74u_mimir_idle
+        anm_idle_aim_w_gl                              = aks74u_mimir_aim_hand_w_gl, aks74u_mimir_idle
+        anm_idle_aim_moving_w_gl                       = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle, 0.75
+        anm_idle_aim_moving_crouch_w_gl                = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle, 0.7
+        anm_idle_moving_w_gl                           = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle
+        anm_idle_sprint_w_gl                           = aks74u_mimir_sprint_hand_w_gl, aks74u_mimir_idle, 1.1 
+        anm_sprint2walk_w_gl                           = aks74u_mimir_sprint2walk_quick_hand_w_gl, aks74u_mimir_idle
+        anm_idle_aim_start_w_gl                        = aks74u_mimir_aim_start_hand_w_gl, aks74u_mimir_idle
+        anm_idle_aim_end_w_gl                          = aks74u_mimir_aim_end_hand_w_gl, aks74u_mimir_idle
+        
+        
+        anm_switch_mode_w_gl                  	 = aks74u_mimir_switch_mode_hand_w_gl, aks74u_mimir_idle
+        
+        anm_bore_empty_w_gl                                  = aks74u_mimir_inspect_hand_w_gl, aks74u_mimir_idle_empty
+
+;=============JAMMED STATE=============================
+        anm_show_w_gl_jammed                          = aks74u_mimir_draw_hand_w_gl, aks74u_mimir_idle_jammed       
+        anm_hide_w_gl_jammed                          = aks74u_mimir_holster_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_bore_w_gl_jammed                          = aks74u_mimir_inspect_jammed_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_w_gl_jammed                          = aks74u_mimir_idle_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_aim_w_gl_jammed                      = aks74u_mimir_aim_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_aim_moving_w_gl_jammed               = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle_jammed, 0.75
+        anm_idle_aim_moving_crouch_w_gl_jammed        = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle_jammed, 0.7
+        anm_idle_moving_w_gl_jammed                   = aks74u_mimir_walk_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_sprint_w_gl_jammed                   = aks74u_mimir_sprint_hand_w_gl, aks74u_mimir_idle_jammed, 1.1 
+        anm_sprint2walk_w_gl_jammed                   = aks74u_mimir_sprint2walk_quick_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_aim_start_w_gl_jammed                = aks74u_mimir_aim_start_hand_w_gl, aks74u_mimir_idle_jammed
+        anm_idle_aim_end_w_gl_jammed                  = aks74u_mimir_aim_end_hand_w_gl, aks74u_mimir_idle_jammed              
+
+        anm_switch_mode_w_gl_jammed                 	 = aks74u_mimir_switch_mode_hand_w_gl, aks74u_mimir_idle_jammed
+        
+        anm_bore_empty_w_gl_jammed                          = aks74u_mimir_inspect_jammed_hand_w_gl, aks74u_mimir_idle_empty_jammed
+
+;============AMMO CHECKS==============================       
+        anm_ammo_check_w_gl                            = aks74u_mimir_magcheck_hand_w_gl, aks74u_mimir_magcheck
+        anm_ammo_check_empty_w_gl                      = aks74u_mimir_magcheck_hand_w_gl, aks74u_mimir_magcheck_empty
+        anm_ammo_check_w_gl_jammed                     = aks74u_mimir_magcheck_hand_w_gl, aks74u_mimir_magcheck_jammed
+        anm_ammo_check_empty_w_gl_jammed               = aks74u_mimir_magcheck_hand_w_gl, aks74u_mimir_magcheck_empty_jammed
+
+
+;============================================================================================================================================================
+;============USING GL=========================================================================================================================================
+;============================================================================================================================================================
+
+        
+        ;==============SHOOT===================================
+                anm_shots_g                                = aks74u_mimir_shoot_hand_g
+                anm_shots_aim_g                                = aks74u_mimir_shoot_hand_g
+
+                ;anm_shots_aim_g                             = aks74u_mimir_shoot_aim_hand_g
+             
+        ;============RELOADS===================================  
+             
+                ;anm_reload_g                                = aks74u_mimir_draw_hand_g, aks74u_mimir_idle_g
+  
+                anm_reload_g                                = aks74u_mimir_reload_hand_g, aks74u_mimir_reload_g
+                ;anm_reload_empty_g                          = aks74u_mimir_reload_empty_slow_hand_g, aks74u_mimir_reload_empty_slow        
+        
+        ;=============NORMAL STATE=============================        
+                anm_show_g                                  = aks74u_mimir_draw_hand_g, aks74u_mimir_idle_g 
+                anm_hide_g                                  = aks74u_mimir_holster_hand_g, aks74u_mimir_idle_g 
+                anm_bore_g                                  = aks74u_mimir_inspect_hand_g, aks74u_mimir_idle_g
+                anm_idle_g                                  = aks74u_mimir_idle_hand_g, aks74u_mimir_idle_g 
+                anm_idle_aim_g                              = aks74u_mimir_aim_hand_g, aks74u_mimir_idle_g
+                anm_idle_aim_moving_g                       = aks74u_mimir_walk_hand_g, aks74u_mimir_idle_g, 0.75
+                anm_idle_aim_moving_crouch_g                = aks74u_mimir_walk_hand_g, aks74u_mimir_idle_g, 0.7
+                anm_idle_moving_g                           = aks74u_mimir_walk_hand_g, aks74u_mimir_idle_g
+                anm_idle_sprint_g                           = aks74u_mimir_sprint_hand_g, aks74u_mimir_idle_g, 1.1 
+                anm_sprint2walk_g                           = aks74u_mimir_sprint2walk_hand_g, aks74u_mimir_idle_g
+                anm_idle_aim_start_g                        = aks74u_mimir_aim_start_hand_g, aks74u_mimir_idle_g
+                anm_idle_aim_end_g                          = aks74u_mimir_aim_end_hand_g, aks74u_mimir_idle_g
+
+                anm_switch                               = aks74u_mimir_switch_off_hand_g, aks74u_mimir_switch_off_g
+                anm_switch_g                             = aks74u_mimir_switch_on_hand_g, aks74u_mimir_switch_on_g      
+
+                ;ts_pattern_walk2sprint      = .+, anm_idle_sprint, anm_walk2sprint, 1
+        
+                ts_pattern_sprint2walk      = anm_idle_sprint, ^anm_idle.*, anm_sprint2walk, 1
+                ts_pattern_sprint2walk_aim  = anm_walk2sprint, ^anm_idle_aim.*, anm_sprint2walk, 1
+                ts_strict_sprint2walk_idle  = anm_walk2sprint, anm_idle, anm_sprint2walk
+                ts_strict_sprint2walk_move  = anm_walk2sprint, anm_idle_moving, anm_sprint2walk
+        
+                ;ts_pattern_idle2aim         = ^anm_idle.*, ^anm_idle_aim$, anm_idle2aim, 2
+        
+                ;ts_strict_aim2idle         = anm_idle_aim, anm_idle, anm_aim2idle
+                ;ts_strict_aim2walk         = anm_idle_aim, anm_idle_moving, anm_aim2idle
+                ts_strict_sprint2aim        = anm_idle_sprint, anm_idle_aim, anm_sprint2walk
+                ts_strict_aim2sprint        = anm_idle_aim, anm_idle_sprint, anm_walk2sprint
+        
+                ts_strict_sprint2aimthing        = anm_idle_sprint, anm_idle_aim_start, anm_sprint2walk
+        
+                ts_strict_sprint2inspect        = anm_idle_sprint, anm_bore, anm_sprint2walk
+                ts_strict_walk2sprint_inspect        = anm_walk2sprint, anm_bore, anm_sprint2walk
+        
+                ; ts_pattern_reload_interrupt     = anm_add_cartridge, ^anm_idle.*, anm_close 
+                ; ts_pattern_reload_empty_interrupt     = anm_add_cartridge_empty, ^anm_idle.*, anm_close      
+;firebone stuff
+        fire_bone                   = muzzle
+        fire_point                  = 0, 0, 0
+
+
+![wpn_ak74u_kobra_hud]
+
+item_visual                 =  anomaly_weapons\wpn_ak74u\wpn_ak74u_new_kobra_hud.ogf
+
+aim_hud_offset_pos                       = -0.056148, -0.00935, -0.046789
+aim_hud_offset_pos_16x9                  = -0.056148, -0.00935, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_1p29_hud]
+
+item_visual                 =  anomaly_weapons\wpn_ak74u\wpn_ak74u_new_1p29_hud.ogf
+
+aim_hud_offset_pos                       = -0.061904, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.061904, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_pso1_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_ak74u_new_pso1_hud.ogf
+
+hands_position                           = -0.011099, 0.003213, 0.065848
+hands_position_16x9                      = -0.011099, 0.003213, 0.065848
+hands_orientation                        = -1.275088, 0.00, 0
+hands_orientation_16x9                   = -1.275088, 0.00, 0
+
+aim_hud_offset_pos                       = -0.044, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.044, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+;-------------------------------------------------------------------------------------------
+
+![wpn_ak74u_sk1_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_aks74u_gl_hud.ogf
+
+hands_position                           = -0.001177, 0.001651, 0.041103
+hands_position_16x9                      = -0.001177, 0.001651, 0.041103
+hands_orientation                        = -1.275088, 0.00, 0
+hands_orientation_16x9                   = -1.275088, 0.00, 0
+
+
+aim_hud_offset_pos                       = -0.061904, 0.014901, -0.046789
+aim_hud_offset_pos_16x9                  = -0.061904, 0.014901, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+lowered_hud_offset_pos			= 0.039731, -0.011574, 0.011684
+lowered_hud_offset_pos_16x9		= 0.039731, -0.011574, 0.011684
+lowered_hud_offset_rot			= -0.1,-0.6,0.4
+lowered_hud_offset_rot_16x9		= -0.081037,-0.705504,0.4
+
+
+
+![wpn_ak74u_kobra_sk1_hud]
+item_visual                 =  anomaly_weapons\wpn_ak74u\wpn_ak74u_new_kobra_hud.ogf
+
+aim_hud_offset_pos                       = -0.058442, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.058442, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_1p29_sk1_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_ak74u_new_1p29_hud.ogf
+
+aim_hud_offset_pos                       = -0.061904, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.061904, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_pso1_sk1_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_ak74u_new_pso1_hud.ogf
+
+hands_position                           = 0.008955, -0.026584, 0.075449
+hands_position_16x9                      = 0.008955, -0.026584, 0.075449
+hands_orientation                        = -1.003742, 2.716443, 0.166683
+hands_orientation_16x9                   = -1.003742, 2.716443, 0.166683
+
+aim_hud_offset_pos                       = -0.053705, 0.027916, -0.046789
+aim_hud_offset_pos_16x9                  = -0.053705, 0.027916, -0.046789
+aim_hud_offset_rot                       = 0.036994, 0.03089, 0
+aim_hud_offset_rot_16x9                  = 0.036994, 0.03089, 0
+
+
+
+![wpn_ak74u_sk2_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_aks74u_gl_hud.ogf
+
+hands_position                           = -0.001177, 0.001651, 0.041103
+hands_position_16x9                      = -0.001177, 0.001651, 0.041103
+hands_orientation                        = -1.275088, 0.00, 0
+hands_orientation_16x9                   = -1.275088, 0.00, 0
+
+
+aim_hud_offset_pos                       = -0.061904, 0.014901, -0.046789
+aim_hud_offset_pos_16x9                  = -0.061904, 0.014901, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+lowered_hud_offset_pos			= 0.039731, -0.011574, 0.011684
+lowered_hud_offset_pos_16x9		= 0.039731, -0.011574, 0.011684
+lowered_hud_offset_rot			= -0.1,-0.6,0.4
+lowered_hud_offset_rot_16x9		= -0.081037,-0.705504,0.4
+
+
+
+![wpn_ak74u_kobra_sk2_hud]
+item_visual                 =  anomaly_weapons\wpn_ak74u\wpn_ak74u_new_kobra_hud.ogf
+
+aim_hud_offset_pos                       = -0.058442, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.058442, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_1p29_sk2_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_ak74u_new_1p29_hud.ogf
+
+aim_hud_offset_pos                       = -0.061904, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.061904, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+
+![wpn_ak74u_pso1_sk2_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_ak74u_new_pso1_hud.ogf
+
+hands_position                           = -0.011099, 0.003213, 0.065848
+hands_position_16x9                      = -0.011099, 0.003213, 0.065848
+hands_orientation                        = -1.275088, 0.00, 0
+hands_orientation_16x9                   = -1.275088, 0.00, 0
+
+aim_hud_offset_pos                       = -0.044, 0.001601, -0.046789
+aim_hud_offset_pos_16x9                  = -0.044, 0.001601, -0.046789
+aim_hud_offset_rot                       = 0.030167, 0.012064, 0
+aim_hud_offset_rot_16x9                  = 0.030167, 0.012064, 0
+
+![wpn_ak74u_sk6_hud]
+item_visual                 = anomaly_weapons\wpn_ak74u\wpn_aks74u_gl_hud.ogf

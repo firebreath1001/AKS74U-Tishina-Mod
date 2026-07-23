@@ -1,0 +1,26 @@
+local shot_anims = {
+	["anm_shots"] = true,
+	["anm_shots_aim"] = true,
+	["anm_shot_l"] = true,
+	["anm_shots_aim_l"] = true,
+	["anm_shots_g"] = true,
+	["anm_shots_g_aim"] = true,
+	["anm_shot_g_l"] = true,
+	["anm_shot_g_l_aim"] = true,
+	["anm_shots_w_gl"] = true,
+	["anm_shots_w_gl_aim"] = true,
+	["anm_shot_w_gl_l"] = true,
+	["anm_shot_w_gl_l_aim"] = true,
+}
+
+function actor_on_hud_animation_play(anm_table)
+
+	if (shot_anims[anm_table.anm_name] and not IsMoveState("mcSprint")) then
+		anm_table.anm_mixin = false
+	end
+
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+end

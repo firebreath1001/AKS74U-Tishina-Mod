@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / temp files
+*.tmp
+*.bak
+*~
+.vscode/
+.idea/
+
+# Archives (build the release .zip/.7z outside the repo)
+*.zip
+*.7z
+*.rar
