@@ -1,0 +1,19 @@
+-- Script that plays the shell casing sound from Bullet Shell Sounds by garbielmcclay
+-- through unlocalizer when it encounters a motionmark with text "shell_sound"
+
+
+function actor_on_hud_animation_mark(state, mark, hud_item, owner)
+  if mark == "shell_sound" then
+    if not hud_item or not owner then return end
+    local wpn = hud_item:cast_Weapon()
+    if not wpn then return end
+
+    if owner:id() ~= AC_ID then return end
+
+    bullet_shell_sounds.create_shell_sound(false)
+  end
+end
+
+function on_game_start()
+  RegisterScriptCallback("actor_on_hud_animation_mark",actor_on_hud_animation_mark)
+end
