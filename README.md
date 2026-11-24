@@ -32,32 +32,27 @@ SOFT REQUIREMENT: "Universal Animation Scripts" is needed for the "jammed state"
 - 0.6 HUD FOV Patch. Repositions the gun so it looks better when using hud_fov 0.6
 - Kennedith's Enhanced Shaders Metallic Boost. This changes the weapons' .thm (material) file so it uses PhongMetal, giving it a proper metallic shade.
 ENHANCED SHADERS IS REQUIRED! https://www.moddb.com/addons/enhanced-shaders-and-color-grading-for-151
-- Mags Redux Patch. Makes sure the right magazine for the M82A2 is used, which is the same as the M82.
-- Shader 3D Scopes Patch. Also known as 3DSS, makes the M82A2's Scope work with 3DSS' technology.
-SHADER 3D SCOPES IS REQUIRED! https://www.moddb.com/mods/stalker-anomaly/addons/shader-3d-scopes
 
 
 # DETAILS
 
 Model-wise:
-The M82A2 is made by "ovidiu-barat", with some nice details like visible welding on the receiver, all credits go to him.
-Some model changes and improvements were made by "ZoulKrystal".
+The AKS-74U is made by "luchadordev", it comes with some very nice Mesh & Texture details.
+The "BS-1 Tishina Grenade Launcher" is from "Caliber", all credits go to them.
 
 Texture-wise:
-Textures modified and improved by "ZoulKrystal" to look better in STALKER.
-A lower-res texture was made for the world model by ZoulKrystal, this makes sure it looks good while also not taking too much space and VRAM.
+Textures modified and improved by "Blackgrowl" to look better in STALKER.
 
 Animation-wise
-Completely new unique animation set by "NickolasNikova", includes Inspect/Idle/Bore, Jam Inspect, Unjam, Magazine Check as well as Full & Partial Reload.
+Completely new unique animation set by "FireBreath", includes Inspect/Idle/Bore, Jam Inspect, Unjam, Magazine Check as well as Full & Partial Reload.
 
 Balance-wise:
-The M82A2 is an "alternative" to the M82, having a bullpup configuration. The biggest difference is much higher price, compensated for less recoil, much better handling and lower weight.
-The M82A2 is very rare, it is carried by Master class Mercenaries, Monolith and UNISG.
-From Traders, it is sold by Mercenaries, Monolith and UNISG.
+There are no balance changes whatsoever, other than the addition of a Grenade Launcher for the AKS-74u.
 
 # COMPATIBILITY
 
-Should be compatible with everything.
+Not compatible with mods that change "w_aks74u.ltx"
+A merge/patch can be done relatively easily though.
 
 # FEEDBACK/CONTACT
 
@@ -67,17 +62,16 @@ If it's important, like you want to use it on another mod or you want to edit it
 
 # COPYRIGHT/LICENSE
 
-The M82A2 is made by "ovidiu-barat", all credits go to him.
-The unique Animation Set is made by "NickolasNikova", all credits & rights go to him. 
+The AKS-74U is made by "luchadordev", all credits go to him.
+The "BS-1 Tishina" is made by "FOR-GAMES CR LTD", all credits go to them.
+The unique Animation Set is made by "FireBreath", all credits & rights go to him. 
 The license is simple; no commercial use and credits are required. "No Commercial Use" includes asking for donations, just don't.
-The same license will go to you, make sure to credit "ovidiu_barat" as well as "ZoulKrystal", "Blackgrowl" and "NickolasNikova" if you are going to use it anywhere in Anomaly, such as your modpack.
-___________
-CREDITS
-___________
+The same license will go to you, make sure to credit "luchadordev" as well as "Firebreath" and "Blackgrowl" if you are going to use it anywhere in Anomaly, such as your modpack.
 
-"ovidiu-barat" for the original model & textures.
-"ZoulKrystal" for the creation of the mod, including textures, world model&texture, config, additions, etc.
-"Blackgrowl" for the creation of the mod, including changes made to the configs, small fixes, etc.
-"NickolasNikova" for the new animation set.
+# CREDITS
+
+"luchadordev" for the original model & textures.
+"Firebreath" for the new animation set and initial mod setup.
+"Blackgrowl" for the texture modification and later mod setup.
 "Jurkonov" for materials provided.
 "VodoXleb" for Russian Translation.
